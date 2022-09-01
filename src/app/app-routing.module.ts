@@ -15,6 +15,10 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./scan-devices/scan-devices.module').then( m => m.ScanDevicesPageModule)
   },
+  {
+    path: 'pressure-page',
+    loadChildren: () => import('./pressure-page/pressure-page.module').then( m => m.PressurePagePageModule)
+  },
 
 ];
 

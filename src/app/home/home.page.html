@@ -7,6 +7,9 @@
 </ion-header>
 
 <ion-content style="text-align: center;">
+  <ion-refresher style="margin-top: 100px;" slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <div style="text-align: center; font-size: 15px; font-weight: 700;">
     <ion-label>
       calibration setpoint
@@ -46,6 +49,10 @@
       <ion-input [(ngModel)]="pressure5" name="pressure5" [(ngModel)]="pressure5" (ionChange)="onChange('pressure5', pressure5)" slot="end"></ion-input>
     </ion-item>
   </ion-list>
+  <ion-button (click)="writeData()">
+    Submit
+  </ion-button>
+  <ion-button (click)="goToPressurePage()">Go to pressure page</ion-button>
   <ion-item></ion-item>
   <div style="font-weight: 700; margin:10px">
     Next Calibration Date

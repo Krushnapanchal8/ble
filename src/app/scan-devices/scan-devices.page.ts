@@ -44,7 +44,6 @@ export class ScanDevicesPage implements OnInit {
   }
 
   connect(device) {
-    console.log(device)
     this.ble.connect(device.id).subscribe(device => {
       this.commonService.deviceInfo = device;
       console.log('device connected',device);
